@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "humao.rest-client",
+    "graphql.vscode-graphql",
+    "ms-vsliveshare.vsliveshare",
+    "orta.vscode-jest",
+    "esbenp.prettier-vscode",
+    "msazurermtools.azurerm-vscode-tools",
+    "ms-azuretools.vscode-bicep",
+    "ms-playwright.playwright",
+    "github.vscode-github-actions"
+  ]
+}

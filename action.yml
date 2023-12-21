@@ -1,0 +1,13 @@
+name: "Populated topbar e2e test"
+description: "Run an acceptance e2e test to ensure that populated topbar is working correctly in the hosted application"
+inputs:
+  application_url:
+    description: The application url
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Set GitHub action path
+      run: APP_URL="${{ inputs.application_url }}" yarn playwright test
+      shell: bash
