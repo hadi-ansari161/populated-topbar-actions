@@ -11,6 +11,8 @@ runs:
     - uses: actions/checkout@v3
       id: checkout
     - name: Install deps
+      shell: bash
       run: yarn
     - name: Set GitHub action path
+      shell: bash
       run: APP_URL="${{ inputs.application_url }}" yarn playwright test
