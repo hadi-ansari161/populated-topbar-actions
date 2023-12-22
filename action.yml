@@ -11,7 +11,7 @@ runs:
     - uses: actions/checkout@v3
       id: checkout
       with:
-        repository: "https://github.com/hadi-ansari161/populated-topbar-actions"
+        repository: "hadi-ansari161/populated-topbar-actions"
     - name: Install deps
       shell: bash
       run: |
