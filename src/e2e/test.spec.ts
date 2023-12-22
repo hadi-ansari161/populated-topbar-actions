@@ -1,8 +1,8 @@
 import { test, expect } from "./app-page.fixture";
 
 test("has version", async ({ applicationPage }) => {
-  // await applicationPage.page.goto("http://localhost:3001/");
-  await applicationPage.page.goto(applicationPage.baseUrl);
+  await applicationPage.page.goto("https://stage.mysystems.axis.com/");
+  // await applicationPage.page.goto(applicationPage.baseUrl);
 
   await applicationPage.login({
     userName: process.env.E2E_USER ?? "",

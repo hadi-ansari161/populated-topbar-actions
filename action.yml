@@ -17,9 +17,10 @@ runs:
       run: |
         yarn
         yarn playwright install
+
     - name: Set GitHub action path
       shell: bash
-      run: APP_URL="${{ inputs.application_url }}" yarn playwright test
+      run: E2E_USER="${{ secrets.E2E_USER }}" E2E_PASSWORD="${{ secrets.E2E_PASSWORD }}" APP_URL="${{ inputs.application_url }}" yarn playwright test
     - uses: actions/upload-artifact@v3
       if: always()
       with:
