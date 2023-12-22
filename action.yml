@@ -4,6 +4,12 @@ inputs:
   application_url:
     description: The application url
     required: true
+  username:
+    description: Username for the user
+    required: true
+  password:
+    description: Password for the user
+    required: true
 
 runs:
   using: composite
@@ -23,7 +29,7 @@ runs:
         username: ${{ secrets.E2E_USER }}
     - name: Set GitHub action path
       shell: bash
-      run: APP_URL="${{ inputs.application_url }}" yarn playwright test
+      run: E2E_USER=${{ inputs.username }} E2E_PASSWORD=${{ inputs.password }} APP_URL="${{ inputs.application_url }}" yarn playwright test
     - uses: actions/upload-artifact@v3
       if: always()
       with:
