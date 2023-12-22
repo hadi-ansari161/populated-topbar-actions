@@ -1,0 +1,10 @@
+name: Test secret
+description: blablabla
+inputs:
+  username:
+    description: username.
+    required: true
+
+runs:
+  name: echo username
+  run: echo ${{ inputs.username }}

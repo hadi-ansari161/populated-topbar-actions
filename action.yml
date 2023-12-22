@@ -17,9 +17,10 @@ runs:
       run: |
         yarn
         yarn playwright install
-    - name: Get secrets
+    - uses: ./test.yml
       shell: bash
-      run: echo ${{ secrets.E2E_USER }}
+      with:
+        username: ${{ secrets.E2E_USER }}
     - name: Set GitHub action path
       shell: bash
       run: APP_URL="${{ inputs.application_url }}" yarn playwright test
