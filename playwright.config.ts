@@ -17,11 +17,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
 
   use: {
-    // Base URL to use in actions like `await page.goto('/')`.
-    // baseURL: "http://127.0.0.1:3000",
-
-    // Collect trace when retrying the failed test.
-    trace: "off",
+    trace: "on",
   },
   // Configure projects for major browsers.
   projects: [

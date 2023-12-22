@@ -20,3 +20,9 @@ runs:
     - name: Set GitHub action path
       shell: bash
       run: APP_URL="${{ inputs.application_url }}" yarn playwright test
+    - uses: actions/upload-artifact@v3
+      if: always()
+      with:
+        name: test-result
+        path: test-result/
+        retention-days: 10
