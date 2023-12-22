@@ -8,6 +8,10 @@ inputs:
 runs:
   using: composite
   steps:
+    - uses: actions/checkout@v3
+        id: checkout
+    - name: Install deps
+      run: yarn
     - name: Set GitHub action path
       run: APP_URL="${{ inputs.application_url }}" yarn playwright test
       shell: bash
