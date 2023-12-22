@@ -1,19 +1,19 @@
 import { test, expect } from "./app-page.fixture";
 
 test("has version", async ({ applicationPage }) => {
-  console.log("url is: ", applicationPage.baseUrl);
+  // await applicationPage.page.goto(applicationPage.baseUrl);
+  await applicationPage.page.goto("http://localhost:3001/");
 
-  await applicationPage.page.goto(applicationPage.baseUrl);
+  await applicationPage.login({
+    userName: process.env.E2E_USER ?? "",
+    password: process.env.E2E_PASSWORD ?? "",
+  });
 
-  await expect(applicationPage.page).toHaveTitle(/Playwright/);
+  const topbarVersion = await applicationPage.helpMenu.getAttribute(
+    "data-version"
+  );
+
+  expect(topbarVersion).toBe("6.3.7");
+
+  expect(true).toBeTruthy();
 });
-
-// test("get started link", async ({ applicationPage }) => {
-//   await applicationPage.page.goto(applicationPage.baseUrl);
-
-//   await applicationPage.page.getByRole("link", { name: "Get started" }).click();
-
-//   await expect(
-//     applicationPage.page.getByRole("heading", { name: "Installation" })
-//   ).toBeVisible();
-// });

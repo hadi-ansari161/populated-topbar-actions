@@ -1,4 +1,12 @@
 import { defineConfig } from "@playwright/test";
+import dotenv from "dotenv";
+import path from "path";
+
+// Read from default ".env" file.
+dotenv.config();
+
+// Alternatively, read from "src/e2e/.env" file.
+dotenv.config({ path: path.resolve("src", "e2e", ".env") });
 
 export default defineConfig({
   // Look for test files in the "tests" directory, relative to this configuration file.
