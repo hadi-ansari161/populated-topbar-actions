@@ -14,4 +14,3 @@ runs:
       run: yarn
     - name: Set GitHub action path
       run: APP_URL="${{ inputs.application_url }}" yarn playwright test
-      shell: bash
